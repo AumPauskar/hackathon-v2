@@ -15,7 +15,7 @@
 
 <body>
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+		<a class="navbar-brand" href="#"><img src="cal/images/logo.png" alt=""></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
 			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -26,13 +26,7 @@
 					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Features</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Pricing</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
+					<a class="nav-link" href="http://127.0.0.1:8000/admin">ADMIN</a>
 				</li>
 			</ul>
 		</div>
@@ -54,10 +48,12 @@
 </html>
 
 <style>
-	table {
+	table.scrolldown {
 		border: 1px solid black;
-		table-layout: fixed;
 		width: 200px;
+  }
+  table.scrolldown tbody, table.scrolldown thead {
+    display: block;
 
 	}
 
@@ -78,7 +74,19 @@
 
 	h3 {
 		text-align: center;
+  
 	}
+  table.scrolldown tbody {
+        
+        /* Set the height of table body */
+        height: 50px;
+          
+        /* Set vertical scroll */
+        overflow-y: auto;
+          
+        /* Hide the horizontal scroll */
+        overflow-x: hidden; 
+    }
 </style>
 
 <h1>All India Council for Technical Education</h1>
@@ -98,7 +106,7 @@
 			</tr>
 		</thead>
 
-		<tbody>
+    <tbody>
 			{% for cal in cals %}
 			<tr>
 				<th scope="row">{{ cal.sr }}</th>
